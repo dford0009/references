@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<configuration>
+  <db>
+    <name>app</name>
+    <host>example.org</host>
+    <user>jdoe</user>
+    <password>foo &amp; bar"</password>
+  </db>
+  <host>
+    <name>0.0.0.0</name>
+    <port>443</port>
+  </host>
+</configuration>

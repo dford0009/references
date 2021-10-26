@@ -1,0 +1,19 @@
+<div id="todo-input" class="card">
+  <form (ngSubmit)="onAddTodo(f)" #f="ngForm">
+    <label for="todo">Todo</label>
+    <input ngModel type="text" id="todo" name="todo" required />
+    <button class="btn" type="submit" [disabled]="!f.valid">Save</button>
+  </form>
+</div>
+
+<div id="todos" class="card">
+  <div id="todo-actions">
+    <button class="btn btn-alt" (click)="onFetchData()">Fetch from Database</button>
+  </div>
+  <ul>
+    <li class="todo" *ngFor="let todo of todos; let i = index">
+      <h1>{{ todo.title }}</h1>
+      <button class="btn btn-danger" (click)="onRemoveTodo(i)">DELETE</button>
+    </li>
+  </ul>
+</div>

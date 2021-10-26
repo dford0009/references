@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donut Object example</title>
+     <style>
+      body { 
+        font-family: monospace; 
+      }
+      div {
+        margin: 20px
+      }
+      img {
+        margin:10px 20px;
+      }
+      input {
+        font-size: 14px;
+        padding: 10px;
+        color: #36383f;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+      }
+      select {
+        font-size: 20px;
+        color: #36383f;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        width: 300px;
+      }
+      button{
+        font-size: 17px;
+        padding: 10px;
+        border-radius:25px;
+        color: #f7f8f9;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+      }
+      h2 {
+        color: #36383F;
+        font-size: 16px;
+      }
+      #addDonutButton {
+        background-color: #007bbb;
+      }
+      #button-holder {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+        top: 200px;
+      }
+      #donut-holder, #name-holder {
+        display: flex;
+      }
+      .name {
+        margin: 10px;
+        font-size: 17px;
+        color: #36383f;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+        width: 225px;
+        overflow: hidden;
+        text-align: center;
+      }
+      #remove {
+        background-color: #007bbb;
+      }
+      
+     </style> 
+  </head>
+  <body>
+    <h1>An Object of Donuts!</h1>
+    <div id="donut-holder">
+      <!--donut images are added here by JavaScript-->
+    </div>
+    <div id="name-holder">
+      <!--donut name are added here by JavaScript-->
+    </div>
+    
+    <div>
+      <h2>Give a Name (a.k.a. KEY) to the donut</h2>
+      <input type="text" id="donut-name-input" pattern="[a-zA-Z]*">
+    </div>
+    <div>
+      <h2>Select a Donut Type</h2>
+      <select id="donut-type">
+          <option value='<img src="./donut1.png"/>'>Strawberry donut</option>
+          <option value='<img src="./donut2.png"/>'>Chocolate Donut</option>
+          <option value='<img src="./donut3.png"/>'>Glazed Donut</option>
+      </select>
+    </div>
+    <div>
+      <button id="addDonutButton" onclick="addDonut()">
+          Add Donut
+      </button>  
+    </div>
+    <script>
+      // Everything Between the Script tags is JavaScript
+      // You do not need to understand the code here
+
+      // Declare a donutObject
+      // It's empty to start
+      // but we'll fill it up with donuts
+      var donutObject = {};
+
+      // Function that is fired when you click on the Add Donut Button
+      // Looks first for the name (a.k.a. key)
+      // Then the donut type
+      // And then it makes an new object
+      // making the name = key, and the donut type = value
+      function addDonut() {
+        var name = document.getElementById("donut-name-input").value;
+        var nameElement = `<p id="donut-name" class="name">${name}</p>`;
+        document.getElementById("name-holder").innerHTML += nameElement;
+
+        var donut = document.getElementById("donut-type").value;
+        document.getElementById("donut-holder").innerHTML += donut;
+
+        makeObject(name, donut);
+      }
+
+      function makeObject(name, donut) {
+        return (donutObject[name] = donut);
+      }
+    </script>
+  </body>
+</html>

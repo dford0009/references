@@ -1,0 +1,76 @@
+/*** NAVIGATION COMMANDS ***/
+
+The Tilde ~ indicates the HOME directory.  The HOME directory meaning the home of the user who's executing a command.  
+For me this translates to `users/angel` for you it will be something like `users/yourComputersUserName`
+
+cd - change directories.  Follow this command by the relative or absolute file path of where you'd like to navigate to.
+      Example: cd ~/Desktop 
+      Example: cd ../.. 
+      Example: cd ./Downloads
+
+TIP: use tab with the cd command to auto-complete your file paths.
+
+ls - list.  This command will list the files / folders for the location you are in.
+      Example: ls 
+
+open - opens in the Finder where you are in the terminal.  Use the command followed by what you'd like to open.  
+      Example: open Command-list
+      Example - to open where you are in the terminal: open .
+
+--Windows Users open command --
+type the file path ex: ~\Desktop\notes\Command-file
+--
+
+pwd - present working directory.  This command returns your current file path. 
+      Example: pwd
+
+/*** RANDOM COMMANDS ***/
+
+man - manual.  This command brings up the manual for the command you follow it with.  Exit the manual by pressing "q".
+      Example: man say
+
+say - will "say" the string you type after it.  You can add a -v flag followed by the voice of the voice type.
+      Example: say -v moira guinness is good for you
+      Example: say bananas 
+
+--Windows Users speech command --
+Add-Type -AssemblyName System.Speech
+$say = New-Object -TypeName System.Speech.Synthesis.SpeechSynthesizer
+---
+
+
+/*** FILE MANIPULATION ***/
+
+
+cp - copy.  This command copies files.  Use the command followed by the filename and destination.
+      Example: cp cashew.png ../../Desktop
+
+find - to find things on your computer's file system.  You can define where you'd like to look as well as by what file type and or name. 
+      Example: find ~/Desktop -type f -name "someName"
+      Example: find ~/Desktop -type d  -name /Users/angel/Desktop/NUTS!
+      Example: find ~/Desktop -name "*/.html"
+
+--Windows Users find command--
+Get-ChildItem.  Ex: `gci -filter "NUTS" $pwd
+
+or if you'd like download a command that runs very similar to the `find` command.
+See here: http://windows-powershell-scripts.blogspot.com/2009/08/unix-linux-find-equivalent-in.html
+--  
+
+mkdir - make directory (a.k.a. folder).  Use this command to make a folder.  Follow it by the name you'd like to give the folder.
+      Example: mkdir notes
+
+mv - move or rename.  This command you can use to move a file or rename a file. 
+      Example - to move: mv nuts ../../Desktop
+      Example - to rename: mv ./nuts NUTS!
+
+touch - makes a file.  Use this command to make new file.
+      Example: touch image.png
+      Example: touch Command-list
+
+--Windows Users make a file command--
+echo makes the file, $null just means the file is blank.
+
+ex: echo $null >> Command-file
+--
+

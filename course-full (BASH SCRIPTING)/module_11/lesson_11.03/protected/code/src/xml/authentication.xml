@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<authentication>
+  <username>jdoe</username>
+  <password>foo &gt; bar</password>
+</authentication>

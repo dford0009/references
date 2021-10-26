@@ -1,0 +1,107 @@
+<!--
+
+Web Forms 2.0 is an extension to the forms features found in HTML4. 
+Form elements and attributes in HTML5 provide a greater degree of semantic mark-up than HTML4 
+and free us from a great deal of tedious scripting and styling that was required in HTML4.
+
+HTML 4 Inputs
+1	
+text
+A free-form text field, nominally free of line breaks.
+
+2	
+password
+A free-form text field for sensitive information, nominally free of line breaks.
+
+3	
+checkbox
+A set of zero or more values from a predefined list.
+
+4	
+radio
+An enumerated value.
+
+5	
+submit
+A free form of button initiates form submission.
+
+6	
+file
+An arbitrary file with a MIME type and optionally a file name.
+
+7	
+image
+A coordinate, relative to a particular image's size, with the extra semantic that it must be the last value selected and initiates form submission.
+
+8	
+hidden
+An arbitrary string that is not normally displayed to the user.
+
+9	
+select
+An enumerated value, much like the radio type.
+
+10	
+textarea
+A free-form text field, nominally with no line break restrictions.
+
+11	
+button
+A free form of button which can initiates any event related to button.
+
+HTML 4 EXAMPLE
+<form action = "http://example.com/cgiscript.pl" method = "post">  
+   <p> 
+      <label for = "firstname">first name: </label> 
+      <input type = "text" id = "firstname"><br /> 
+   
+      <label for = "lastname">last name: </label> 
+      <input type = "text" id = "lastname"><br /> 
+   
+      <label for = "email">email: </label> 
+      <input type = "text" id = "email"><br> 
+   
+      <input type = "radio" name = "sex" value = "male"> Male<br> 
+      <input type = "radio" name = "sex" value = "female"> Female<br> 
+      <input type = "submit" value = "send"> <input type = "reset"> 
+   </p> 
+</form> 
+
+HTML 5 INPUT ADDITIONS
+
+1	datetime
+A date and time (year, month, day, hour, minute, second, fractions of a second) encoded according to ISO 8601 with the time zone set to UTC.
+
+2	datetime-local
+A date and time (year, month, day, hour, minute, second, fractions of a second) encoded according to ISO 8601, with no time zone information.
+
+3	date
+A date (year, month, day) encoded according to ISO 8601.
+
+4	month
+A date consisting of a year and a month encoded according to ISO 8601.
+
+5	week
+A date consisting of a year and a week number encoded according to ISO 8601.
+
+6	time
+A time (hour, minute, seconds, fractional seconds) encoded according to ISO 8601.
+
+7	number
+It accepts only numerical value. The step attribute specifies the precision, defaulting to 1.
+
+8	range
+The range type is used for input fields that should contain a value from a range of numbers.
+
+9	email
+It accepts only email value. This type is used for input fields that should contain an e-mail address. If you try to submit a simple text, it forces to enter only email address in email@example.com format.
+
+10	url
+It accepts only URL value. This type is used for input fields that should contain a URL address. If you try to submit a simple text, it forces to enter only URL address either in http://www.example.com format or in http://example.com format.
+
+OUTPUT ELEMENT
+
+HTML5 introduced a new element <output> which is used to represent the result of different types of output, such as output written by a script.
+
+You can use the for attribute to specify a relationship between the output element and other elements in the document that affected the calculation (for example, as inputs or parameters). The value of the for attribute is a space-separated list of IDs of other elements.
+-->

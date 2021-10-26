@@ -1,0 +1,8 @@
+graph "System architecture" {
+    frontend -- backend -- database;
+    backend -- "message broker" -- frontend;
+
+    bgcolor = transparent;
+    dpi = 300;
+    size = "8.5,11!";
+}

@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div *ngIf="cryptos">
+  <!--
+  <div id="crypto-container" *ngFor="let crypto of objectKeys(limitList)">
+    <span class="left">{{ crypto.currency }}</span>
+    <span class="right">{{ crypto.price | currency:'USD':true }}</span>
+  </div>
+  -->
+<!--
+  <div id="crypto-container" *ngFor="let crypto of objectKeys(cryptos)">
+      <span class="left">{{ cryptos[crypto].currency }}</span>
+      <span class="right">{{ cryptos[crypto].price | currency:'USD':true }}</span>
+  </div>
+-->
+</div>
+
+<div *ngIf="limitList">
+  <div id="crypto-container" *ngFor="let crypto of objectKeys(limitList)">
+    <span class="left">{{ limitList[crypto].currency }}</span>
+    <span class="right">{{ limitList[crypto].price | currency:'USD':true }}</span>
+  </div>
+
+</div>

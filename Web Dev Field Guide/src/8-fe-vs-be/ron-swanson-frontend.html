@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <link href="https://fonts.googleapis.com/css?family=Fira+Mono" rel="stylesheet">
+  <style>
+    body {
+      font-family: Fira Mono, monospace;
+    }
+    h1 {
+      text-align: center;
+      font-size: 50px;
+    }
+    div {
+      margin: auto;
+      width: 60%;
+      padding: 0px 10px 40px 10px;
+      text-align: center;
+      font-size: 20px;
+    }
+    button {
+      background-color: #9FCEE2;
+      color:rgba(0,0,0,0.6);
+      font-family: Fira Mono, monospace;
+      display: block;
+      margin: auto;
+      width: 250px;
+      height: 30px;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body onload="getQuote()">
+  <h1>Ron Swanson Quotes</h1>
+  <div>
+    <img src="./ron-swanson-img.png" alt="ron-swanson">
+  </div>
+  <div id="quoteDisplay">
+      <!-- Quotes will display here -->
+  </div> 
+  
+  <button onclick="getQuote()">Quote me!</button>
+
+  <script>
+    const endpoint = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes';
+    
+    function getQuote() {
+      fetch(endpoint)
+        .then(response => {
+          return response.json();
+        })
+        .then(quote => { 
+          document.getElementById('quoteDisplay').innerHTML = quote;
+        })
+    };
+  </script>
+</body>
+</html>

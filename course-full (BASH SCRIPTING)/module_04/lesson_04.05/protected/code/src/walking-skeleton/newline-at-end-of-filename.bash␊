@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -o errexit -o nounset
+
+script_directory="$(dirname "${BASH_SOURCE[0]}X")"
+script_directory="${script_directory%X}"
+
+# shellcheck source=utilities.bash
+. "${script_directory}/utilities.bash"

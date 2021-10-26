@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donut Array example</title>
+     <style>
+      body { 
+        font-family: monospace; 
+      }
+      img {
+        margin:10px;
+      }
+      input {
+        font-size: 14px;
+        padding: 10px;
+        color: #36383f;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+      }
+      button{
+        font-size: 17px;
+        padding: 10px;
+        border-radius:25px;
+        color: #f7f8f9;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+      }
+      #add {
+        background-color: #960064;
+      }
+      #button-holder {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+        top: 200px;
+      }
+      #donut-holder {
+        display: flex;
+      }
+      #remove {
+        background-color: #007bbb;
+      }
+      
+     </style> 
+  </head>
+  <body>
+    <h1>An Array of Donuts!</h1>
+    <div id="donut-holder">
+      <!--donuts are added here by JavaScript-->
+    </div>
+    <div id="button-holder">
+      <button id="add" onclick="addDonut()">
+          Add a Donut!
+      </button>
+      <button id="remove" onclick="removeDonut()">
+          Remove a Donut
+      </button>
+    </div>
+    <p>The index of the selected donut</p>
+    <input type="number" id="donutIndex">  
+    <script>
+      // Everything Between the Script tags is JavaScript
+      // You do not need to understand the code here
+ 
+      // Define two donut images
+      var donut1 = '<img src="./donut1.png"/>';
+      var donut2 = '<img src="./donut2.png"/>';
+      var donut3 = '<img src="./donut3.png"/>';
+      // Put donut images into an array
+      var donutArray = [ donut1, donut2, donut3 ];
+      
+      //Insert the donutArray into the donut-holder element
+      document.getElementById("donut-holder").innerHTML = donutArray;
+      // Fire off the returnIndex Function when you click on a donut
+      donutArray.onclick = returnIndex();
+      // Function that randomly adds a donut to the donutArray
+      function addDonut() {
+        var randomDonutGenerator = `<img src="./donut${Math.floor(Math.random() * 3) +
+          1}.png"/>`;
+        donutArray.push(randomDonutGenerator);
+        document.getElementById("donut-holder").innerHTML = donutArray;
+        donutArray.onclick = returnIndex();
+      }
+      // Function that removes a donut using the pop method
+      function removeDonut() {
+        donutArray.pop();
+        document.getElementById("donut-holder").innerHTML = donutArray;
+        donutArray.onclick = returnIndex();
+      }
+      // Function that gets length of donutArray
+      // then loops through each item in the array
+      // and returns it's index
+      function returnIndex(){
+        var array = document.getElementById("donut-holder");
+        var length = array.children.length;
+        for (var i = 0; i < length; i++){
+          (function(index){
+            array.children[i].onclick = function(){
+              document.getElementById('donutIndex').value = index
+              }    
+          })(i);
+        }
+      }
+    </script>
+  </body>
+</html>

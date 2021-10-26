@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donut Array example</title>
+    <style>
+      body {
+        font-family: monospace;
+      }
+      img {
+        margin: 10px;
+      }
+      input {
+        font-size: 14px;
+        padding: 10px;
+        color: #36383f;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+      }
+      button {
+        font-size: 17px;
+        padding: 10px;
+        border-radius: 25px;
+        color: #f7f8f9;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: bold;
+      }
+      #add {
+        background-color: #960064;
+      }
+      #button-holder {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+        top: 200px;
+      }
+      #donut-holder {
+        display: flex;
+      }
+      #remove {
+        background-color: #007bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>An Array of Donuts!</h1>
+    <div id="donut-holder"><!--donuts are added here by JavaScript--></div>
+    <div id="button-holder">
+      <button id="add" onclick="addDonut()">Add a Donut!</button>
+      <button id="remove" onclick="removeDonut()">Remove a Donut</button>
+    </div>
+    <p>The index of the selected donut</p>
+    <input type="number" id="donutIndex" />
+    <script>
+      // Define a donut image tag
+      var donut = '<img src="./donut1.png"/>';
+
+      // Create our initial donutArray, which will be changed by later functions
+      // and holds all of our donut img tags
+      var donutArray = [donut];
+
+      // Add a donut to our array and update our view
+      function addDonut() {
+        donutArray.push(donut);
+        updateView();
+      }
+
+      // Remove a donut from our array and update our view
+      function removeDonut() {
+        donutArray.pop();
+        updateView();
+      }
+
+      // Updates the view
+      function updateView() {
+        // This gets the "donut-holder" element and sets the HTML to our
+        // donutArray
+        document.getElementById("donut-holder").innerHTML = donutArray;
+      }
+
+      // Update our view for the first time
+      updateView();
+    </script>
+  </body>
+</html>

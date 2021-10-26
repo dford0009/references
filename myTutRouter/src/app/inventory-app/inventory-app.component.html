@@ -1,0 +1,8 @@
+<h2>Inventory App Example</h2>
+
+<div class="inventory-app">
+    <products-list
+      [productList]="products"
+      (onProductSelected)="productWasSelected($event)">
+    </products-list>
+</div>
